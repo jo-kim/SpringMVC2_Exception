@@ -18,4 +18,12 @@
 + 뷰 템플릿 처리
   + ```ModelAndView``` 에 값을 채워서 예외에 따른 새로운 오류 화면 뷰 렌더링 해서 고객에게 제공
 + API 응답 처리
-  + ```response.getWriter().println("hello");``` 처럼 HTTP 응답 바디에 직접 데이터를 넣어주는것도 가능하다. 여기에 JSON 으로 응답하면 API 응답 처리를 할 수 있다
+  + ```response.getWriter().println("hello");``` 처럼 HTTP 응답 바디에 직접 데이터를 넣어주는것도 가능하다. 여기에 JSON 으로 응답하면 API 응답 처리를 할 수 있다.
+  
+  ##### @ExceptionHandler
++ 스프링은 API 예외 처리 문제를 해결하기 위해 ```@ExceptionHandler``` 라는 애노테이션을 사용하는 매우편리한 예외 처리 기능을 제공하는데, 
+    이것이 바로 ```ExceptionHandlerExceptionResolver``` 이다. 
++ ```@ExceptionHandler``` 사용 방법 
+   1. ```@ExceptionHandler``` 애노테이션을 선언하고, 해당 컨트롤러에서 처리하고 싶은 예외를 지정해주면 된다. 
+   2. 해당 컨트롤러에서 예외가 발생하면 이 메서드가 호출된다. 
+    > 참고로 지정한 예외 또는 그 예외의 자식클래스는 모두 잡을 수 있다.
